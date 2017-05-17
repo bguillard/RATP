@@ -25,6 +25,8 @@ public:
     string terminusDate;
     
     Mission(const string& IserverDate, const string& Istation, const string& Idirection, const string& ImissionID, const string& IstationDate, const string& IterminusDate);
+    
+    Mission(const string* params);
 };
 
 

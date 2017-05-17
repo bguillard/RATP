@@ -16,5 +16,14 @@ Mission::Mission(const string& IserverDate, const string& Istation, const string
     missionID = ImissionID;
     stationDate = IstationDate;
     terminusDate = IterminusDate;
-    
+}
+
+Mission::Mission(const string* params)
+{
+    serverDate = params[1];
+    station = params[2];
+    direction = params[3];
+    missionID = params[4];
+    stationDate = params[5];
+    terminusDate = params[6];
 }
