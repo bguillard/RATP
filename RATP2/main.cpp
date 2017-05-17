@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <set>
 #include <string>
 #include <fstream>
 #include "mission.hpp"
@@ -59,11 +60,34 @@ int main(int argc, const char * argv[]) {
         }
     }
     
-    cout << "Fichier lu" << endl;
+    cout << "Fichier lu :" << endl;
+    cout << missions.size() << " missions chargees." << endl;
+    
+    cout << "Tri concernant les arrêts de lozère :" << endl;
+    vector<Mission*> missionsLozere;
+
     
     for(int i = 0; i < missions.size(); i++)
     {
-        cout << missions[i]->station << endl;
+        if(missions[i]->station == "1865-2332 (Lozere)" && missions[i]->direction == "A (Robinson / Saint-Remy-les-Chevreuse)")
+        {
+            missionsLozere.push_back(missions[i]);
+        }
     }
+    cout << missionsLozere.size() << " missions trouvees." << endl;
+    
+    set<string> horaires;
+    
+    for(int i = 0; i < missionsLozere.size(); i++)
+    {
+        horaires.insert(missionsLozere[i]->stationDate);
+    }
+    cout << horaires.size() << " missions differentes." << endl;
+    
+    for(auto m : horaires)
+    {
+        cout << m << endl;
+    }
+    
     return 0;
 }
