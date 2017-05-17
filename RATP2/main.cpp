@@ -7,9 +7,24 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "mission.hpp"
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    vector<Mission*> missions;
+    
+    for(int i = 0; i<10; i++)
+    {
+        missions.push_back(new Mission("a","b","c","d","e","f"));
+    }
+    
+    for(int i = 0; i<10; i++)
+    {
+        cout << missions[i]->station << endl;
+    }
+    
     return 0;
 }
