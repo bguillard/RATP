@@ -1,37 +1,23 @@
 //
-//  main.cpp
+//  reader_from_txt.cpp
 //  RATP2
 //
-//  Created by Benoît Guillard on 17/05/2017.
+//  Created by luc leflem on 5/17/17.
 //  Copyright © 2017 Benoît Guillard. All rights reserved.
 //
 
+#include "reader_from_txt.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
-#include "mission.hpp"
-
 using namespace std;
 
-int main(int argc, const char * argv[]) {
-    
-    vector<Mission*> missions;
-    
-    for(int i = 0; i<10; i++)
-    {
-        missions.push_back(new Mission("a","b","c","d","e","f"));
-    }
-    
-    for(int i = 0; i<10; i++)
-    {
-        cout << missions[i]->station << endl;
-    }
-    
+int Text_to_Vector_of_str(string file_name) {
     // use full path instead and check manully whether the file is there or not
     // to do it : drag the text file into a terminal window for example : full path will appear
     
-    std::ifstream file("/Users/lucleflem/Desktop/test_read.txt");
+    std::ifstream file(file_name);
     std::string line;
     
     if(file.fail())
@@ -42,5 +28,4 @@ int main(int argc, const char * argv[]) {
             cout << line;
         }
     }
-    return 0;
 }
