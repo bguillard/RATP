@@ -11,6 +11,7 @@
 #include <set>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "mission.hpp"
 
 using namespace std;
@@ -43,20 +44,27 @@ int main(int argc, const char * argv[]) {
     // use full path instead and check manully whether the file is there or not
     // to do it : drag the text file into a terminal window for example : full path will appear
     ifstream file("/Users/benoitguillard/Documents/X/INF442/PI/rer-b-sample.data");
-    string* lines = new string[7];
-    int compt = 0;
-   
+    std::string lines;
+
+    
+    
     if(file.fail())
         cout << "Opening file failed!" << endl;
     else{
-        while(getline(file, lines[compt]))
+        while(getline(file, lines))
         {
-            compt ++;
-            if(compt > 6)
+            std::stringstream ss(lines);
+            vector<string> result;
+            
+            while( ss.good() )
             {
-                missions.push_back(new Mission(lines));
-                compt = 0;
+                string substr;
+                getline( ss, substr, ',' );
+                result.push_back( substr );
             }
+            
+            missions.push_back(Mission::Mission(result));
+            
         }
     }
     

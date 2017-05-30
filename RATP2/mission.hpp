@@ -27,6 +27,8 @@ public:
     Mission(const string& IserverDate, const string& Istation, const string& Idirection, const string& ImissionID, const string& IstationDate, const string& IterminusDate);
     
     Mission(const string* params);
+    
+    Mission(const std::vector<std::string>);
 };
 
 

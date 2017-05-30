@@ -27,3 +27,12 @@ Mission::Mission(const string* params)
     stationDate = params[5];
     terminusDate = params[6];
 }
+
+Mission::Mission(vector<string> vec){
+    serverDate = vec[0];
+    station = vec[1];
+    direction = vec[2];
+    missionID = vec[3];
+    stationDate = vec[4];
+    terminusDate = vec[5];
+}
