@@ -77,7 +77,7 @@ int main(int argc, const char * argv[]) {
     
     for(int i = 0; i < missions.size(); i++)
     {
-        if(missions[i]->station == "1865-2332 (Lozere)")
+        if(missions[i]->station == "Lozere")
         {
             missionsLozere.push_back(missions[i]);
         }

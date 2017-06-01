@@ -29,7 +29,7 @@ public:
     string nextMissionTerminusDate;
     
     
-    Mission(const std::vector<std::string>);
+    Mission(const std::vector<std::string> vec);
 };
 
 
