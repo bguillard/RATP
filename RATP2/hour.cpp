@@ -34,3 +34,19 @@ void Hour::print(std::ostream &flux) const
         flux << "0";
     flux<< minutes << "m";
 }
+
+bool Hour::egal(Hour const& b) const
+{
+    return (heures == b.heures && minutes == b.minutes);
+}
+
+bool operator==(Hour const& a, Hour const& b)
+{
+    return a.egal(b);
+}
+
+bool operator!=(Hour const& a, Hour const& b)
+{
+    return !(a.egal(b));
+}
+

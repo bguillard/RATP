@@ -19,6 +19,7 @@ public:
     Hour(const std::string date);
     
     void print(std::ostream &flux) const;
+    bool egal(Hour const& b) const;
 };
 
 bool operator==(Hour const& a, Hour const& b);
