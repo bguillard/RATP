@@ -20,10 +20,13 @@ class Mission {
 public:
     string serverDate;
     string station;
-    string direction;
     string missionID;
     string stationDate;
-    string terminusDate;
+    string stop;
+    string stationMessage;
+    string nextMission;
+    string nextMissionStationDate;
+    string nextMissionTerminusDate;
     
     Mission(const string& IserverDate, const string& Istation, const string& Idirection, const string& ImissionID, const string& IstationDate, const string& IterminusDate);
     
