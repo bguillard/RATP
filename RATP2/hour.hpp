@@ -18,16 +18,17 @@ public:
     
     Hour(const std::string date);
     
-    bool operator==(Hour const& a, Hour const& b);
-    bool operator<=(Hour const& a, Hour const& b);
-    bool operator>=(Hour const& a, Hour const& b);
-    bool operator<(Hour const& a, Hour const& b);
-    bool operator>(Hour const& a, Hour const& b);
-    
-    
-    Hour operator+(Hour const& a, Hour const& b);
-    Hour operator-(Hour const& a, Hour const& b);
 };
 
+bool operator==(Hour const& a, Hour const& b);
+
+bool operator<=(Hour const& a, Hour const& b);
+bool operator>=(Hour const& a, Hour const& b);
+bool operator<(Hour const& a, Hour const& b);
+bool operator>(Hour const& a, Hour const& b);
+
+
+Hour operator+(Hour const& a, Hour const& b);
+Hour operator-(Hour const& a, Hour const& b);
 
 #endif /* hour_hpp */
