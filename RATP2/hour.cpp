@@ -9,7 +9,8 @@
 #include "hour.hpp"
 #include <iostream>
 
-Hour::Hour(const std::string date){
+Hour::Hour(const std::string date)
+{
     if(date.size() == 12)
     {
         heures = stoi(date.substr(8,2));
@@ -50,3 +51,42 @@ bool operator!=(Hour const& a, Hour const& b)
     return !(a.egal(b));
 }
 
+void Hour::operator+=(const Hour &a)
+{
+    minutes += a.minutes;
+    heures += minutes / 60;
+    minutes %= 60;
+    heures += a.heures%24;
+}
+
+Hour operator+(Hour const& a, Hour const& b)
+{
+    Hour ans(a);
+    ans += b;
+    return b;
+}
+
+bool Hour::strictInf(Hour const& b) const
+{
+    return heures<b.heures || (heures==b.heures && minutes<b.minutes);
+}
+
+bool operator<(Hour const& a, Hour const& b)
+{
+    return a.strictInf(b);
+}
+
+bool operator>(Hour const& a, Hour const& b)
+{
+    return b<a;
+}
+
+bool operator<=(Hour const& a, Hour const& b)
+{
+    return a<b || a==b;
+}
+
+bool operator>=(Hour const& a, Hour const& b)
+{
+    return a>b || a==b;
+}
