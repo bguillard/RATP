@@ -85,18 +85,17 @@ int main(int argc, const char * argv[]) {
     }
     cout << missionsLozere.size() << " missions passant par Lozere trouvees." << endl;
     
-    set<string> horaires;
+    set<Hour> horaires;
     
     for(int i = 0; i < missionsLozere.size(); i++)
     {
-        horaires.insert(missionsLozere[i]->stationDate);
+        horaires.insert(Hour(missionsLozere[i]->stationDate));
     }
     cout << horaires.size() << " missions differentes." << endl;
     
     for(auto m : horaires)
     {
-        Hour h(m);
-        cout << h << endl;
+        cout << m << endl;
     }
     
     return 0;

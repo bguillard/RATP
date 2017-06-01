@@ -63,7 +63,7 @@ Hour operator+(Hour const& a, Hour const& b)
 {
     Hour ans(a);
     ans += b;
-    return b;
+    return ans;
 }
 
 bool Hour::strictInf(Hour const& b) const
@@ -90,3 +90,18 @@ bool operator>=(Hour const& a, Hour const& b)
 {
     return a>b || a==b;
 }
+
+void Hour::operator-=(const Hour &a)
+{
+    int ecartTotal = abs(minutes-a.minutes + 60*(heures-a.heures));
+    minutes = ecartTotal%60;
+    heures = ecartTotal/60;
+}
+
+Hour operator-(Hour const& a, Hour const& b)
+{
+    Hour ans(a);
+    ans -= b;
+    return ans;
+}
+
