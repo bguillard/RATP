@@ -8,31 +8,14 @@
 
 #include "mission.hpp"
 
-Mission::Mission(const string& IserverDate, const string& Istation, const string& Idirection, const string& ImissionID, const string& IstationDate, const string& IterminusDate)
-{
-    serverDate = IserverDate;
-    station = Istation;
-    direction = Idirection;
-    missionID = ImissionID;
-    stationDate = IstationDate;
-    terminusDate = IterminusDate;
-}
-
-Mission::Mission(const string* params)
-{
-    serverDate = params[1];
-    station = params[2];
-    direction = params[3];
-    missionID = params[4];
-    stationDate = params[5];
-    terminusDate = params[6];
-}
-
 Mission::Mission(vector<string> vec){
     serverDate = vec[0];
     station = vec[1];
-    direction = vec[2];
-    missionID = vec[3];
-    stationDate = vec[4];
-    terminusDate = vec[5];
+    missionID = vec[2];
+    stationDate = vec[3];
+    stop = vec[4];
+    stationMessage = vec[5];
+    nextMission = vec[6];
+    nextMissionStationDate = vec[7];
+    nextMissionTerminusDate = vec[8];
 }
