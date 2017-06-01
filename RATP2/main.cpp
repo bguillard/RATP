@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
     
     // use full path instead and check manully whether the file is there or not
     // to do it : drag the text file into a terminal window for example : full path will appear
-    ifstream file("/Users/benoitguillard/Documents/X/INF442/PI/rer-b-sample.data");
+    ifstream file("/Users/benoitguillard/Documents/X/INF442/PI/log_20170520044135_RB-A.txt");
     std::string lines;
 
     
@@ -77,12 +77,12 @@ int main(int argc, const char * argv[]) {
     
     for(int i = 0; i < missions.size(); i++)
     {
-        if(missions[i]->station == "1865-2332 (Lozere)" && missions[i]->direction == "A (Robinson / Saint-Remy-les-Chevreuse)")
+        if(missions[i]->station == "1865-2332 (Lozere)")
         {
             missionsLozere.push_back(missions[i]);
         }
     }
-    cout << missionsLozere.size() << " missions trouvees." << endl;
+    cout << missionsLozere.size() << " missions passant par Lozere trouvees." << endl;
     
     set<string> horaires;
     
