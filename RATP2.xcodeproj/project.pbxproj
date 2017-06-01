@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6731791F1ECC794D00E05D79 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6731791E1ECC794D00E05D79 /* main.cpp */; };
 		673179271ECC7A8200E05D79 /* mission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 673179251ECC7A8200E05D79 /* mission.cpp */; };
-		679AE2951EE0A3BD000B1046 /* hour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 679AE2931EE0A3BD000B1046 /* hour.cpp */; };
+		679AE2981EE0A567000B1046 /* hour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 679AE2961EE0A567000B1046 /* hour.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,8 @@
 		6731791E1ECC794D00E05D79 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		673179251ECC7A8200E05D79 /* mission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mission.cpp; sourceTree = "<group>"; };
 		673179261ECC7A8200E05D79 /* mission.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mission.hpp; sourceTree = "<group>"; };
-		679AE2931EE0A3BD000B1046 /* hour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hour.cpp; sourceTree = "<group>"; };
-		679AE2941EE0A3BD000B1046 /* hour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hour.hpp; sourceTree = "<group>"; };
+		679AE2961EE0A567000B1046 /* hour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hour.cpp; sourceTree = "<group>"; };
+		679AE2971EE0A567000B1046 /* hour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hour.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +63,11 @@
 		6731791D1ECC794D00E05D79 /* RATP2 */ = {
 			isa = PBXGroup;
 			children = (
-				679AE2931EE0A3BD000B1046 /* hour.cpp */,
-				679AE2941EE0A3BD000B1046 /* hour.hpp */,
 				6731791E1ECC794D00E05D79 /* main.cpp */,
 				673179251ECC7A8200E05D79 /* mission.cpp */,
 				673179261ECC7A8200E05D79 /* mission.hpp */,
+				679AE2961EE0A567000B1046 /* hour.cpp */,
+				679AE2971EE0A567000B1046 /* hour.hpp */,
 			);
 			path = RATP2;
 			sourceTree = "<group>";
@@ -132,7 +132,7 @@
 			files = (
 				673179271ECC7A8200E05D79 /* mission.cpp in Sources */,
 				6731791F1ECC794D00E05D79 /* main.cpp in Sources */,
-				679AE2951EE0A3BD000B1046 /* hour.cpp in Sources */,
+				679AE2981EE0A567000B1046 /* hour.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
