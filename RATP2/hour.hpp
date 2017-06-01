@@ -13,11 +13,12 @@
 #include <string>
 class Hour {
 public:
-    int heure;
+    int heures;
     int minutes;
     
     Hour(const std::string date);
     
+    void print(std::ostream &flux) const;
 };
 
 bool operator==(Hour const& a, Hour const& b);
@@ -27,8 +28,9 @@ bool operator>=(Hour const& a, Hour const& b);
 bool operator<(Hour const& a, Hour const& b);
 bool operator>(Hour const& a, Hour const& b);
 
-
 Hour operator+(Hour const& a, Hour const& b);
 Hour operator-(Hour const& a, Hour const& b);
+
+std::ostream& operator<<( std::ostream &flux, Hour const& h );
 
 #endif /* hour_hpp */

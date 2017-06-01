@@ -13,6 +13,7 @@
 #include <fstream>
 #include <sstream>
 #include "mission.hpp"
+#include "hour.hpp"
 
 using namespace std;
 
@@ -94,7 +95,8 @@ int main(int argc, const char * argv[]) {
     
     for(auto m : horaires)
     {
-        cout << m << endl;
+        Hour h(m);
+        cout << h << endl;
     }
     
     return 0;

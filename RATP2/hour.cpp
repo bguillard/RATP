@@ -7,3 +7,30 @@
 //
 
 #include "hour.hpp"
+#include <iostream>
+
+Hour::Hour(const std::string date){
+    if(date.size() == 12)
+    {
+        heures = stoi(date.substr(8,2));
+        minutes = stoi(date.substr(10,2));
+    }
+    else
+        std::cerr << "Format de date non supporte" << std::endl;
+}
+
+std::ostream &operator<<( std::ostream &flux, Hour const& a)
+{
+    a.print(flux) ;
+    return flux;
+}
+
+void Hour::print(std::ostream &flux) const
+{
+    if(heures < 10)
+        flux << "0";
+    flux << heures << "h";
+    if(minutes < 10)
+        flux << "0";
+    flux<< minutes << "m";
+}
