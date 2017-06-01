@@ -63,8 +63,8 @@ int main(int argc, const char * argv[]) {
                 result.push_back( substr );
             }
             
-            missions.push_back(Mission::Mission(result));
-            
+            if(result.size() == 9)
+                missions.push_back(new Mission::Mission(result));
         }
     }
     
