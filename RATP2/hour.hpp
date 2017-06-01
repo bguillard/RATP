@@ -14,6 +14,7 @@
 class Hour {
 public:
     Hour(const std::string date);
+    Hour();
     
     void print(std::ostream &flux) const;
     bool egal(Hour const& b) const;
