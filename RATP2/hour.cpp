@@ -17,7 +17,18 @@ Hour::Hour(const std::string date)
         minutes = stoi(date.substr(10,2));
     }
     else
-        std::cerr << "Format de date non supporte" << std::endl;
+    {
+        std::cerr << date.size() << std::endl;
+        for(int i = 0; i < date.size(); i++)
+            std::cerr << date[i] << std::endl;
+        std::cerr << "Format de date non supporte :" << date << std::endl;
+    }
+}
+
+Hour::Hour()
+{
+    heures = 0;
+    minutes = 0;
 }
 
 std::ostream &operator<<( std::ostream &flux, Hour const& a)

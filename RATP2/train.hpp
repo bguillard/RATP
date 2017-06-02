@@ -9,11 +9,9 @@
 #ifndef train_hpp
 #define train_hpp
 
-#include <map>
-#include <iostream>
-#include "hour.cpp"
-
 #include <stdio.h>
+#include <map>
+#include "hour.hpp"
 
 class Train_theorique{
     
@@ -28,3 +26,4 @@ class Train_theorique{
 };
 
 #endif /* train_hpp */
+

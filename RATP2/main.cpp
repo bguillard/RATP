@@ -14,6 +14,7 @@
 #include <sstream>
 #include "mission.hpp"
 #include "hour.hpp"
+#include "train.hpp"
 
 using namespace std;
 
@@ -72,9 +73,9 @@ int main(int argc, const char * argv[]) {
     cout << "Fichier lu :" << endl;
     cout << missions.size() << " missions chargees." << endl;
     
+    /*
     cout << "Tri concernant les arrêts de lozère :" << endl;
     vector<Mission*> missionsLozere;
-
     
     for(int i = 0; i < missions.size(); i++)
     {
@@ -96,6 +97,51 @@ int main(int argc, const char * argv[]) {
     for(auto m : horaires)
     {
         cout << m << endl;
+    }
+    
+    return 0;
+     
+    */
+    vector<Train_theorique *> trains_theoriques;
+    
+    for(int i = 0; i < missions.size(); i++)
+    {
+        std::string station = missions[i]->station;
+        Hour next_entry = Hour(missions[i]->nextMissionStationDate);
+        Hour terminus = Hour(missions[i]->nextMissionTerminusDate);
+        std::string missionsId = missions[i]->nextMission;
+        
+        bool already_a_train = false;
+        
+        for(std::vector<Train_theorique*>::iterator it = trains_theoriques.begin() ; it < trains_theoriques.end() ; it++){
+            // We suppose here that all trains are different
+            if((*it)->terminus == terminus && (*it)->missionID == missionsId){ // We found a line corresponding to an already existing train
+                (*it)->route.insert(std::pair<Hour,std::string>(next_entry, station));
+                already_a_train = true;
+            }
+        }
+        
+        if(!already_a_train){
+            std::map<Hour, std::string> new_route;
+            new_route.insert(std::pair<Hour,std::string>(next_entry, station));
+            Train_theorique* new_train = new Train_theorique(new_route,missionsId,terminus);
+            trains_theoriques.push_back(new_train);
+        }
+    }
+    
+    
+    // pour parcourir toutes les paires de la map
+    for(std::vector<Train_theorique*>::iterator it=trains_theoriques.begin() ; it!=trains_theoriques.end() ; ++it)
+    {
+        std::cout<<"Voici les stations visitées par le train "<<(*it)->missionID<<" arrivant à son terminus à "<<(*it)->terminus<<":"<<std::endl;;
+        
+        
+        std::map<Hour, std::string> route_empruntee = (*it)->route;
+        
+        for(std::map<Hour, std::string>::iterator itos = route_empruntee.begin() ; itos!=route_empruntee.end() ; ++itos){
+            std::cout<<itos->second<<" à "<<itos->first<<std::endl;
+        }
+        
     }
     
     return 0;
